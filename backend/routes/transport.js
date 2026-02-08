@@ -1,0 +1,8 @@
+const express = require('express');
+const router = express.Router();
+const transportController = require('../controllers/transportController');
+
+router.get('/', transportController.listTransport);
+router.post('/', transportController.createTransport);
+
+module.exports = router;
