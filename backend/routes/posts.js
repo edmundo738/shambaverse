@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const postController = require('../controllers/postController');
 
-router.get('/', (req, res) => {
-  res.json({ message: 'Endpoint em construção', resource: 'posts' });
-});
+router.get('/', postController.listPosts);
+router.post('/', postController.createPost);
 
 module.exports = router;

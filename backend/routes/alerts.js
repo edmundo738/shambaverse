@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const alertController = require('../controllers/alertController');
 
-router.get('/', (req, res) => {
-  res.json({ message: 'Endpoint em construção', resource: 'alerts' });
-});
+router.get('/', alertController.listAlerts);
+router.post('/', alertController.createAlert);
 
 module.exports = router;
